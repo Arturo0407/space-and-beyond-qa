@@ -1,0 +1,130 @@
+<h2 class="sr-only">Mockup de Jira con las incidencias BUG-T3-01 y BUG-T3-02 del proyecto Space Beyond</h2>
+<div style="background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:16px;font-family:var(--font-sans);display:flex;flex-direction:column;gap:16px">
+
+  <div style="background:var(--color-background-primary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);overflow:hidden">
+    <div style="background:#0052cc;padding:8px 16px;display:flex;align-items:center;gap:12px">
+      <div style="display:flex;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05a5a"></div><div style="width:10px;height:10px;border-radius:50%;background:#e0a95a"></div><div style="width:10px;height:10px;border-radius:50%;background:#5aaa6a"></div></div>
+      <div style="flex:1;background:#0747a6;border-radius:4px;padding:4px 10px;font-size:12px;color:#b3d4ff">jira.atlassian.com / projects / KAN / issues / BUG-T3-01</div>
+    </div>
+
+    <div style="padding:16px">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
+        <div style="background:#fce8e8;border-radius:4px;padding:4px 8px;font-size:11px;font-weight:500;color:#a32d2d;flex-shrink:0"><i class="ti ti-bug" style="font-size:12px;vertical-align:-1px;margin-right:3px" aria-hidden="true"></i>Bug</div>
+        <div style="flex:1">
+          <div style="font-size:16px;font-weight:500;color:var(--color-text-primary)">Formulario acepta correo con formato inválido (sin @)</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">BUG-T3-01 · HU-03 · Creado: Jun 7, 2026</div>
+        </div>
+        <span style="background:#ffeb9c;color:#9c6500;font-size:12px;font-weight:500;padding:4px 10px;border-radius:20px;flex-shrink:0">Abierto</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:0.5px solid var(--color-border-tertiary);border-radius:8px;overflow:hidden;margin-bottom:12px">
+        ${[
+          ["Severidad","Media","#ffeb9c","#9c6500"],
+          ["Prioridad","Media","#ffeb9c","#9c6500"],
+          ["Historia de usuario","HU-03 – Formulario","",""],
+          ["Caso vinculado","CP-HU03-02","",""],
+          ["Reportado por","Integrante 3","",""],
+          ["Asignado a","Equipo QA","",""],
+        ].map((r,i)=>`
+          <div style="padding:8px 12px;background:${i%2===0?"var(--color-background-secondary)":"var(--color-background-primary)"};border-bottom:0.5px solid var(--color-border-tertiary);font-size:12px;color:var(--color-text-secondary);font-weight:500">${r[0]}</div>
+          <div style="padding:8px 12px;background:${i%2===0?"var(--color-background-secondary)":"var(--color-background-primary)"};border-bottom:0.5px solid var(--color-border-tertiary)">
+            ${r[3]?`<span style="background:${r[2]};color:${r[3]};font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px">${r[1]}</span>`:`<span style="font-size:12px;color:var(--color-text-primary)">${r[1]}</span>`}
+          </div>
+        `).join("")}
+      </div>
+
+      <div style="margin-bottom:12px">
+        <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:6px">Descripción</div>
+        <div style="font-size:13px;color:var(--color-text-primary);line-height:1.6;background:var(--color-background-secondary);border-radius:6px;padding:10px 12px">
+          El formulario de registro de contacto acepta y procesa correos sin formato válido (ej. sin @). La validación no rechaza el dato incorrecto y el formulario se envía exitosamente.
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px">
+        <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:6px">Pasos para reproducir</div>
+        <div style="font-size:13px;color:var(--color-text-primary);line-height:1.8;background:var(--color-background-secondary);border-radius:6px;padding:10px 12px">
+          1. Ir a la sección de formulario de contacto<br>
+          2. Ingresar nombre válido<br>
+          3. Ingresar correo sin @ (ej. <code style="background:#eaeef2;padding:1px 5px;border-radius:3px;font-size:11px">testtestim.io</code>)<br>
+          4. Hacer clic en el botón de envío
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:10px 12px">
+          <div style="font-size:11px;font-weight:500;color:var(--color-text-secondary);margin-bottom:4px">Resultado esperado</div>
+          <div style="font-size:12px;color:var(--color-text-primary)">Mensaje de error indicando formato de correo inválido. Formulario no se envía.</div>
+        </div>
+        <div style="border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:10px 12px;background:#fff9f9">
+          <div style="font-size:11px;font-weight:500;color:#a32d2d;margin-bottom:4px">Resultado obtenido</div>
+          <div style="font-size:12px;color:var(--color-text-primary)">Formulario enviado con correo inválido. No muestra mensaje de error.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--color-background-primary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);overflow:hidden">
+    <div style="background:#0052cc;padding:8px 16px;display:flex;align-items:center;gap:12px">
+      <div style="display:flex;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05a5a"></div><div style="width:10px;height:10px;border-radius:50%;background:#e0a95a"></div><div style="width:10px;height:10px;border-radius:50%;background:#5aaa6a"></div></div>
+      <div style="flex:1;background:#0747a6;border-radius:4px;padding:4px 10px;font-size:12px;color:#b3d4ff">jira.atlassian.com / projects / KAN / issues / BUG-T3-02</div>
+    </div>
+
+    <div style="padding:16px">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
+        <div style="background:#fce8e8;border-radius:4px;padding:4px 8px;font-size:11px;font-weight:500;color:#a32d2d;flex-shrink:0"><i class="ti ti-bug" style="font-size:12px;vertical-align:-1px;margin-right:3px" aria-hidden="true"></i>Bug</div>
+        <div style="flex:1">
+          <div style="font-size:16px;font-weight:500;color:var(--color-text-primary)">Flujo de pago presenta comportamiento incorrecto / no concluye</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">BUG-T3-02 · HU-04 · Creado: Jun 7, 2026</div>
+        </div>
+        <span style="background:#ffeb9c;color:#9c6500;font-size:12px;font-weight:500;padding:4px 10px;border-radius:20px;flex-shrink:0">Abierto</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:0.5px solid var(--color-border-tertiary);border-radius:8px;overflow:hidden;margin-bottom:12px">
+        ${[
+          ["Severidad","Alta","#fce8e8","#a32d2d"],
+          ["Prioridad","Alta","#fce8e8","#a32d2d"],
+          ["Historia de usuario","HU-04 – Checkout","",""],
+          ["Caso vinculado","CP-HU04-03","",""],
+          ["Reportado por","Integrante 3","",""],
+          ["Asignado a","Equipo QA","",""],
+        ].map((r,i)=>`
+          <div style="padding:8px 12px;background:${i%2===0?"var(--color-background-secondary)":"var(--color-background-primary)"};border-bottom:0.5px solid var(--color-border-tertiary);font-size:12px;color:var(--color-text-secondary);font-weight:500">${r[0]}</div>
+          <div style="padding:8px 12px;background:${i%2===0?"var(--color-background-secondary)":"var(--color-background-primary)"};border-bottom:0.5px solid var(--color-border-tertiary)">
+            ${r[3]?`<span style="background:${r[2]};color:${r[3]};font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px">${r[1]}</span>`:`<span style="font-size:12px;color:var(--color-text-primary)">${r[1]}</span>`}
+          </div>
+        `).join("")}
+      </div>
+
+      <div style="margin-bottom:12px">
+        <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:6px">Descripción</div>
+        <div style="font-size:13px;color:var(--color-text-primary);line-height:1.6;background:var(--color-background-secondary);border-radius:6px;padding:10px 12px">
+          El proceso de checkout presenta comportamiento inconsistente. Al intentar confirmar el pago con tarjeta simulada, el flujo no finaliza y no muestra pantalla de confirmación de reserva.
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px">
+        <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:6px">Pasos para reproducir</div>
+        <div style="font-size:13px;color:var(--color-text-primary);line-height:1.8;background:var(--color-background-secondary);border-radius:6px;padding:10px 12px">
+          1. Ejecutar Login Setup (precondición)<br>
+          2. Seleccionar un destino de viaje<br>
+          3. Completar formulario de pasajero con datos del CSV<br>
+          4. Avanzar a la pasarela de pago<br>
+          5. Ingresar datos de tarjeta simulada y confirmar pago
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:10px 12px">
+          <div style="font-size:11px;font-weight:500;color:var(--color-text-secondary);margin-bottom:4px">Resultado esperado</div>
+          <div style="font-size:12px;color:var(--color-text-primary)">Reserva confirmada con pantalla de éxito y número de reserva visible.</div>
+        </div>
+        <div style="border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:10px 12px;background:#fff9f9">
+          <div style="font-size:11px;font-weight:500;color:#a32d2d;margin-bottom:4px">Resultado obtenido</div>
+          <div style="font-size:12px;color:var(--color-text-primary)">Flujo no concluye. Comportamiento inconsistente, sin confirmación de reserva.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;font-size:11px;color:var(--color-text-secondary)">Mockup — Jira KAN · Incidencias T3 · Space & Beyond QA</div>
+</div>

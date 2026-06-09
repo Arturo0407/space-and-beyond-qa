@@ -1,0 +1,76 @@
+<h2 class="sr-only">Tabla de entregables de la tarea T3 con estado de cada ítem</h2>
+<div style="background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:16px;font-family:var(--font-sans)">
+<div style="background:var(--color-background-primary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);overflow:hidden">
+
+  <div style="padding:16px 20px;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;justify-content:space-between">
+    <div>
+      <div style="font-size:16px;font-weight:500;color:var(--color-text-primary)">Entregables T3 — Space & Beyond QA</div>
+      <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">Automatización: Búsqueda (HU-01) · Formulario (HU-03) · Checkout (HU-04)</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <span style="background:#e6f4ea;color:#1a6b37;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px">8 / 8 completados</span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:32px 1fr 180px 110px 90px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)">
+    <div style="padding:8px 0 8px 16px"></div>
+    <div style="padding:8px 12px;font-size:11px;font-weight:500;color:var(--color-text-secondary)">Entregable</div>
+    <div style="padding:8px 12px;font-size:11px;font-weight:500;color:var(--color-text-secondary)">Descripción</div>
+    <div style="padding:8px 12px;font-size:11px;font-weight:500;color:var(--color-text-secondary)">Responsable</div>
+    <div style="padding:8px 12px;font-size:11px;font-weight:500;color:var(--color-text-secondary)">Estado</div>
+  </div>
+
+  ${[
+    {hu:"HU-01",icon:"ti-test-pipe",entregable:"Scripts Testim — HU-01 (3 scripts)",desc:"Búsqueda filtros, selección, Smoke Test",resp:"Integrante 3",estado:"Completado",color:"#e6f4ea",tc:"#1a6b37"},
+    {hu:"HU-03",icon:"ti-test-pipe",entregable:"Scripts Testim — HU-03 (3 scripts)",desc:"Formulario válido + 2 negativos",resp:"Integrante 3",estado:"Completado",color:"#e6f4ea",tc:"#1a6b37"},
+    {hu:"HU-04",icon:"ti-test-pipe",entregable:"Scripts Testim — HU-04 (3 scripts)",desc:"Checkout hasta donde permite el demo",resp:"Integrante 3",estado:"Completado",color:"#e6f4ea",tc:"#1a6b37"},
+    {hu:"HU-01",icon:"ti-photo",entregable:"Evidencias GitHub — /HU-01",desc:"Capturas, logs y video de ejecución",resp:"Integrante 3",estado:"Completado",color:"#e6f4ea",tc:"#1a6b37"},
+    {hu:"HU-03",icon:"ti-photo",entregable:"Evidencias GitHub — /HU-03",desc:"Flujo positivo + negativos + BUG-T3-01",resp:"Integrante 3",estado:"Completado",color:"#e6f4ea",tc:"#1a6b37"},
+    {hu:"HU-04",icon:"ti-photo",entregable:"Evidencias GitHub — /HU-04",desc:"Checkout + BUG-T3-02 documentado",resp:"Integrante 3",estado:"Completado",color:"#e6f4ea",tc:"#1a6b37"},
+    {hu:"HU-03",icon:"ti-bug",entregable:"Incidencia BUG-T3-01 en Jira",desc:"Correo inválido aceptado — Severidad Media",resp:"Integrante 3",estado:"Registrado",color:"#e6f4ea",tc:"#1a6b37"},
+    {hu:"HU-04",icon:"ti-bug",entregable:"Incidencia BUG-T3-02 en Jira",desc:"Bug proceso de pago — Severidad Alta",resp:"Integrante 3",estado:"Registrado",color:"#e6f4ea",tc:"#1a6b37"},
+  ].map((r,i)=>`
+    <div style="display:grid;grid-template-columns:32px 1fr 180px 110px 90px;border-bottom:0.5px solid var(--color-border-tertiary);background:${i%2===0?"var(--color-background-primary)":"var(--color-background-secondary)"}">
+      <div style="padding:12px 0 12px 14px;display:flex;align-items:center">
+        <i class="ti ti-circle-check" style="font-size:16px;color:#1a6b37" aria-hidden="true"></i>
+      </div>
+      <div style="padding:10px 12px;display:flex;align-items:center;gap:8px">
+        <div style="width:28px;height:28px;border-radius:6px;background:${r.icon==="ti-test-pipe"?"#e8edf8":r.icon==="ti-photo"?"#f0e8f8":"#fce8e8"};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <i class="ti ${r.icon}" style="font-size:14px;color:${r.icon==="ti-test-pipe"?"#3b5bdb":r.icon==="ti-photo"?"#7048c5":"#a32d2d"}" aria-hidden="true"></i>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:500;color:var(--color-text-primary)">${r.entregable}</div>
+          <span style="font-size:11px;background:#f0f0f0;color:#555;padding:1px 6px;border-radius:4px">${r.hu}</span>
+        </div>
+      </div>
+      <div style="padding:10px 12px;font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center">${r.desc}</div>
+      <div style="padding:10px 12px;display:flex;align-items:center">
+        <div style="width:24px;height:24px;border-radius:50%;background:#e8edf8;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#3b5bdb;margin-right:6px">I3</div>
+        <span style="font-size:12px;color:var(--color-text-secondary)">${r.resp}</span>
+      </div>
+      <div style="padding:10px 12px;display:flex;align-items:center">
+        <span style="background:${r.color};color:${r.tc};font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px">${r.estado}</span>
+      </div>
+    </div>
+  `).join("")}
+
+  <div style="padding:14px 20px;display:flex;align-items:center;justify-content:space-between;background:var(--color-background-secondary)">
+    <div style="display:flex;gap:16px">
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="width:10px;height:10px;border-radius:50%;background:#1a6b37"></div>
+        <span style="font-size:12px;color:var(--color-text-secondary)">8 completados</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <i class="ti ti-test-pipe" style="font-size:13px;color:#3b5bdb" aria-hidden="true"></i>
+        <span style="font-size:12px;color:var(--color-text-secondary)">9 scripts Testim.io</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <i class="ti ti-bug" style="font-size:13px;color:#a32d2d" aria-hidden="true"></i>
+        <span style="font-size:12px;color:var(--color-text-secondary)">2 incidencias Jira</span>
+      </div>
+    </div>
+    <span style="font-size:11px;color:var(--color-text-secondary)">Integrante 3 · Jun 7, 2026</span>
+  </div>
+</div>
+<div style="text-align:center;margin-top:8px;font-size:11px;color:var(--color-text-secondary)">Mockup — Checklist de entregables T3 · Space & Beyond QA</div>
+</div>

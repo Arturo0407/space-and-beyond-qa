@@ -1,0 +1,118 @@
+<h2 class="sr-only">Mockup del repositorio GitHub con evidencias de T3 para Space Beyond QA</h2>
+<div style="background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:16px;font-family:var(--font-sans)">
+<div style="background:var(--color-background-primary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);overflow:hidden">
+
+  <div style="background:#24292f;padding:10px 16px;display:flex;align-items:center;gap:12px">
+    <div style="display:flex;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05a5a"></div><div style="width:10px;height:10px;border-radius:50%;background:#e0a95a"></div><div style="width:10px;height:10px;border-radius:50%;background:#5aaa6a"></div></div>
+    <div style="flex:1;background:#32383f;border-radius:4px;padding:4px 10px;font-size:12px;color:#8b949e">github.com / space-beyond-qa / T3-automatizacion</div>
+  </div>
+
+  <div style="background:#f6f8fa;border-bottom:0.5px solid var(--color-border-tertiary);padding:10px 16px;display:flex;align-items:center;gap:10px">
+    <span style="font-size:13px;font-weight:500;color:#0969da"><i class="ti ti-git-branch" style="font-size:14px;vertical-align:-2px;margin-right:4px" aria-hidden="true"></i>main</span>
+    <span style="font-size:12px;color:var(--color-text-secondary)">·</span>
+    <span style="font-size:12px;color:var(--color-text-secondary)">15 commits</span>
+    <span style="font-size:12px;color:var(--color-text-secondary)">·</span>
+    <span style="font-size:12px;font-weight:500;color:#24292f"><i class="ti ti-folder" style="font-size:14px;vertical-align:-2px;margin-right:4px" aria-hidden="true"></i>space-beyond-qa</span>
+  </div>
+
+  <div style="display:flex;gap:0">
+
+    <div style="width:240px;border-right:0.5px solid var(--color-border-tertiary);padding:12px;flex-shrink:0;background:#f6f8fa">
+      <div style="font-size:11px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Estructura del proyecto</div>
+      ${[
+        {icon:"ti-folder",name:"datos",color:"#e3b341",indent:0,active:false},
+        {icon:"ti-file-text",name:"test_data.csv",color:"var(--color-text-secondary)",indent:1,active:false},
+        {icon:"ti-file-text",name:"tarjeta_simulada.json",color:"var(--color-text-secondary)",indent:1,active:false},
+        {icon:"ti-folder",name:"evidencias",color:"#e3b341",indent:0,active:false},
+        {icon:"ti-folder",name:"HU-01",color:"#54aeff",indent:1,active:true},
+        {icon:"ti-folder",name:"HU-03",color:"#54aeff",indent:1,active:false},
+        {icon:"ti-folder",name:"HU-04",color:"#54aeff",indent:1,active:false},
+        {icon:"ti-folder",name:"reportes",color:"#e3b341",indent:0,active:false},
+        {icon:"ti-file-text",name:"README.md",color:"var(--color-text-secondary)",indent:0,active:false},
+      ].map(f=>`
+        <div style="display:flex;align-items:center;gap:6px;padding:4px ${f.indent?12:4}px;border-radius:4px;background:${f.active?"#dbeafe":"transparent"};cursor:pointer;margin-bottom:1px">
+          <i class="ti ${f.icon}" style="font-size:14px;color:${f.color};flex-shrink:0" aria-hidden="true"></i>
+          <span style="font-size:12px;color:${f.active?"#0969da":"var(--color-text-primary)"};font-weight:${f.active?"500":"400"}">${f.name}</span>
+        </div>
+      `).join("")}
+    </div>
+
+    <div style="flex:1;padding:0">
+      <div style="border-bottom:0.5px solid var(--color-border-tertiary);padding:10px 16px;background:#f6f8fa;display:flex;align-items:center;justify-content:space-between">
+        <div style="font-size:13px;color:var(--color-text-secondary)">
+          <span style="color:#0969da;cursor:pointer">evidencias</span>
+          <span style="color:var(--color-text-secondary)"> / </span>
+          <span style="font-weight:500;color:var(--color-text-primary)">HU-01</span>
+        </div>
+        <span style="font-size:11px;color:var(--color-text-secondary)">3 archivos · actualizado hace 2h</span>
+      </div>
+
+      <div style="border-bottom:0.5px solid var(--color-border-tertiary)">
+        ${[
+          {icon:"ti-photo",name:"CP-HU01-01_busqueda_filtros.png",msg:"feat: evidencia CP-HU01-01 búsqueda con filtros",time:"hace 2h",size:"248 KB"},
+          {icon:"ti-photo",name:"CP-HU01-02_seleccion_destino.png",msg:"feat: evidencia CP-HU01-02 selección de destino",time:"hace 2h",size:"312 KB"},
+          {icon:"ti-photo",name:"CP-HU01-03_smoke_home.png",msg:"feat: evidencia CP-HU01-03 smoke test home",time:"hace 2h",size:"198 KB"},
+        ].map((f,i)=>`
+          <div style="display:flex;align-items:center;gap:0;border-bottom:0.5px solid var(--color-border-tertiary);padding:0">
+            <div style="width:36px;display:flex;align-items:center;justify-content:center;padding:10px 0;flex-shrink:0">
+              <i class="ti ${f.icon}" style="font-size:16px;color:#0969da" aria-hidden="true"></i>
+            </div>
+            <div style="flex:1;padding:10px 8px;border-left:0.5px solid var(--color-border-tertiary)">
+              <span style="font-size:13px;color:#0969da;cursor:pointer">${f.name}</span>
+            </div>
+            <div style="width:260px;padding:10px 8px;border-left:0.5px solid var(--color-border-tertiary)">
+              <span style="font-size:12px;color:var(--color-text-secondary)">${f.msg}</span>
+            </div>
+            <div style="width:70px;padding:10px 8px;border-left:0.5px solid var(--color-border-tertiary);text-align:right">
+              <span style="font-size:11px;color:var(--color-text-secondary)">${f.time}</span>
+            </div>
+            <div style="width:60px;padding:10px 12px;border-left:0.5px solid var(--color-border-tertiary);text-align:right">
+              <span style="font-size:11px;color:var(--color-text-secondary)">${f.size}</span>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+
+      <div style="padding:12px 16px;border-bottom:0.5px solid var(--color-border-tertiary)">
+        <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px">Otras carpetas de evidencias</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          ${[
+            {folder:"HU-03",files:["CP-HU03-01_formulario_valido.png","CP-HU03-02_correo_invalido_BUG.png","CP-HU03-03_campos_vacios.png"],n:3},
+            {folder:"HU-04",files:["CP-HU04-01_checkout_login.png","CP-HU04-02_formulario_pasajero.png","CP-HU04-03_pago_BUG.png"],n:3},
+          ].map(f=>`
+            <div style="border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:10px 12px">
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+                <i class="ti ti-folder" style="font-size:16px;color:#54aeff" aria-hidden="true"></i>
+                <span style="font-size:13px;font-weight:500;color:#0969da">${f.folder}</span>
+                <span style="margin-left:auto;font-size:11px;color:var(--color-text-secondary)">${f.n} archivos</span>
+              </div>
+              ${f.files.map(fn=>`
+                <div style="display:flex;align-items:center;gap:6px;padding:3px 0">
+                  <i class="ti ti-photo" style="font-size:13px;color:#0969da" aria-hidden="true"></i>
+                  <span style="font-size:11px;color:var(--color-text-secondary)">${fn}</span>
+                  ${fn.includes("BUG")?`<span style="margin-left:auto;font-size:10px;background:#fce8e8;color:#a32d2d;padding:1px 6px;border-radius:4px">BUG</span>`:""}
+                </div>
+              `).join("")}
+            </div>
+          `).join("")}
+        </div>
+      </div>
+
+      <div style="padding:12px 16px">
+        <div style="background:#f6f8fa;border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:10px 12px">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+            <i class="ti ti-file-text" style="font-size:15px;color:var(--color-text-secondary)" aria-hidden="true"></i>
+            <span style="font-size:13px;font-weight:500;color:var(--color-text-primary)">README.md</span>
+          </div>
+          <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.6">
+            <strong style="color:var(--color-text-primary)">Space & Beyond QA — T3</strong><br>
+            Suite automatizada con Testim.io · HU-01, HU-03, HU-04<br>
+            Ejecución: <code style="background:#eaeef2;padding:1px 5px;border-radius:3px;font-size:11px">testim --suite T3</code> · Navegadores: Chrome, Firefox
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="text-align:center;margin-top:8px;font-size:11px;color:var(--color-text-secondary)">Mockup — GitHub · space-beyond-qa/T3-automatizacion · Evidencias</div>
+</div>
