@@ -1,0 +1,5 @@
+tipo,usuario,password,email,nombre,apellido,tarjeta
+valido,spaceuser,password123,space@test.com,Juan,Perez,4111111111111111
+invalido,usuario_fake,clave_fake,correo_fake,Pedro,Rojas,0000000000000000
+correo_invalido,user1,password123,correosinarroba.com,Carlos,Diaz,4111111111111111
+pasajero,pasajero1,pass123,pasajero@test.com,Ana,Gomez,4111111111111111
